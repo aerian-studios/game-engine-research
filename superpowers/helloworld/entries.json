@@ -1,0 +1,35 @@
+{
+  "nextEntryId": 16,
+  "nodes": [
+    {
+      "id": "7",
+      "name": "Leonard",
+      "type": "sprite"
+    },
+    {
+      "id": "9",
+      "name": "Main Scene",
+      "type": "scene"
+    },
+    {
+      "id": "8",
+      "name": "Script",
+      "type": "script"
+    },
+    {
+      "id": "11",
+      "name": "solid",
+      "type": "sprite"
+    },
+    {
+      "id": "14",
+      "name": "Start",
+      "type": "tileSet"
+    },
+    {
+      "id": "15",
+      "name": "map",
+      "type": "tileMap"
+    }
+  ]
+}
