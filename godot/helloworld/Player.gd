@@ -1,19 +1,21 @@
 extends Area2D
 
-signal hit
+#signal hit
 
 export (int) var SPEED
 var velocity = Vector2()
 var screensize
+var isColliding = false
 
 func _ready():
-	#hide()
+	hide()
 	screensize = get_viewport_rect().size
 	
 func start(pos):
 	position = pos
 	show()
-	$Collision.disabled = false
+	$CollisionShape2D.disabled = false
+
 			
 func _process(delta):
 	velocity = Vector2()
@@ -31,16 +33,20 @@ func _process(delta):
 	else:
 		$AnimatedSprite.stop()
 		
-	position += velocity * delta
-	position.x = clamp(position.x, 0, screensize.x)
-	position.y = clamp(position.y, 0, screensize.y)
+#	position += velocity * delta
+#	position.x = clamp(position.x, 0, screensize.x)
+#	position.y = clamp(position.y, 0, screensize.y)
+	if isColliding != true:
+		move_local_y(velocity.y * delta)
+		move_local_x(velocity.x * delta)
 
 	if velocity.x != 0:
 		$AnimatedSprite.animation = "right"
 		$AnimatedSprite.flip_v = false
 		$AnimatedSprite.flip_h = velocity.x < 0
-
+#
 func _on_Player_body_entered( body ):
-	$Collision.disabled = true
+	isColliding = true
+#	$CollisionShape2D.disabled = false
 	hide()
-	emit_signal("hit")
+#	emit_signal("hit")

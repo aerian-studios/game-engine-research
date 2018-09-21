@@ -34,10 +34,11 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision_mask = 1048575
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -52,7 +53,9 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+position = Vector2( 0.364261, 0.553436 )
 rotation = 0.988697
+scale = Vector2( 1.17233, 1 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Z Index" ]
 
