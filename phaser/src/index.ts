@@ -1,11 +1,13 @@
 import Phaser from "phaser";
+import playerSprite from "./assets/player-sprite.png";
+import obstacleImg from "./assets/obstacle.png";
 
 const preload = function prelaod() {
-  this.load.spritesheet("player", "assets/player-sprite.png", {
+  this.load.spritesheet("player", playerSprite, {
     frameWidth: 53,
     frameHeight: 54
   });
-  this.load.image("obstacle", "assets/obstacle.png");
+  this.load.image("obstacle", obstacleImg);
 };
 
 let platforms: Phaser.Physics.Arcade.StaticGroup;
