@@ -1,0 +1,39 @@
+{
+  "name": "phaser-helloworld",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel src/index.html",
+    "build": "rm -rf dist && parcel build src/index.html",
+    "prepush": "lint-staged",
+    "format": "tslint --fix --project ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "phaser": "^3.13.0"
+  },
+  "devDependencies": {
+    "husky": "^1.0.0-rc.15",
+    "lint-staged": "^7.3.0",
+    "node-sass": "^4.9.3",
+    "parcel-bundler": "^1.9.7",
+    "tslint-config-aerian": "^1.0.3",
+    "typescript": "^3.0.3"
+  },
+  "lint-staged": {
+    "*.{js,jsx,css,md,scss}": [
+      "prettier --write",
+      "git add",
+      "jest --ci --findRelatedTests"
+    ],
+    "*.{ts,tsx}": [
+      "tslint --fix",
+      "git add",
+      "jest --ci --findRelatedTests"
+    ]
+  }
+}
