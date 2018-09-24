@@ -60,6 +60,7 @@ const update = function update() {
     player.anims.play("right", true);
   } else {
     velocity.x = 0;
+    player.anims.stop();
   }
   if (cursors.up.isDown) {
     velocity.y = -60;
