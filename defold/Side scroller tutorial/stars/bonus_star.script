@@ -1,0 +1,17 @@
+local score = 5000
+
+function init(self)
+	local p = go.get_position()
+	p.x = 400
+	p.y = 200
+	go.set_position(p)
+end
+
+function update(self, dt)
+end
+
+function on_message(self, message_id, message, sender)
+	--if message_id == hash("collision_response") then
+		--msg.post("spaceship", "add_score", {amount = score})
+	--end
+end
